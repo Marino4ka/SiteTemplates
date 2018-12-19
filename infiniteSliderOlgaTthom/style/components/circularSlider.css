@@ -1,0 +1,21 @@
+input {
+  float: left;
+  width:120px;
+}
+
+#result {
+	display: flex;
+	flex-flow: row wrap; 
+}
+
+.sliderImg{
+	width: 250px;
+	height: 475px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+	
+
+#buttons {
+  width:240px;
+}

@@ -1,0 +1,16 @@
+input {
+  float: left;
+  width:120px;
+}
+
+#result {
+  width: 250px;
+  height: 475px;
+  color: #fff;
+  font-size: 80px;
+  text-align: center;
+}
+
+#buttons {
+  width:240px;
+}

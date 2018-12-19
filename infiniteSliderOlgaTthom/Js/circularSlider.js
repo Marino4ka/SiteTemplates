@@ -1,0 +1,48 @@
+
+var imagesPathsArr = ["images/widgets/chick1.png", "images/widgets/swill.png", "images/widgets/chick2.jpg", "images/widgets/appointment.jpg",];
+const slidersLength = 3;
+var currentSlides = [];
+
+function createSliderOnLoad () {
+    for (var i = 0; i < slidersLength; i++) {
+       currentSlides[i] = document.createElement('img');
+       currentSlides[i].src = imagesPathsArr[i];
+       result.appendChild(currentSlides[i]);
+    }
+    return;
+};
+
+next.onclick = function next () {
+       currentSlides[slidersLength] = document.createElement('img');
+       currentSlides[slidersLength].src = imagesPathsArr[slidersLength];
+       result.appendChild(currentSlides[slidersLength]);
+       shiftArrayLeft(imagesPathsArr);
+       result.removeChild(currentSlides.shift());
+    };
+
+prev.onclick = function prev () {
+       currentSlides.unshift(document.createElement('img'));
+       currentSlides[0].src = imagesPathsArr[slidersLength];
+       result.insertBefore(currentSlides[0], result.firstChild);
+       shiftArrayRight(imagesPathsArr);
+       result.removeChild(currentSlides[slidersLength]);
+    };
+
+
+function shiftArrayLeft(arr) {
+    var shiftedLeft = arr.shift(); 
+    arr.push(shiftedLeft);
+    return arr;
+};
+
+
+function shiftArrayRight(arr) {
+    arr.unshift(arr[arr.length - 1]);
+    arr.pop();
+    return arr;
+};
+
+
+
+
+window.onload = createSliderOnLoad();
